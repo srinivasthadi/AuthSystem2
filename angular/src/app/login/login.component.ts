@@ -11,10 +11,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+
   constructor(private _myservice: MyserviceService,
     private _router: Router,
     private _activatedRoute: ActivatedRoute) {
-    this.loginForm = new FormGroup({
+      this.loginForm = new FormGroup({
       email: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
     });
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('token', data.toString());
             this._router.navigate(['/dash']);
           },
-          error => { }
+          error => { console.log(error); }
         );
     }
   }

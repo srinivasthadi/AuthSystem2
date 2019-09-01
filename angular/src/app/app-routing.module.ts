@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { MainDeskComponent } from './main-desk/main-desk.component';
 import { RegisterComponent } from './register/register.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -16,7 +17,7 @@ const routes: Routes = [
         { path: 'register', component: RegisterComponent }
       ]
   },
-  {path: 'dash' , component: UserDashboardComponent}
+  {path: 'dash' , canActivate: [AuthGuard], component: UserDashboardComponent}
 ];
 
 @NgModule({

@@ -11,7 +11,7 @@ export class UserDashboardComponent implements OnInit {
 
   username = '';
   constructor(private myService:MyserviceService,
-  private _router: Router) { 
+  private _router: Router) {
     this.myService.getUserName()
     .subscribe(
       data => this.username= data.toString(),

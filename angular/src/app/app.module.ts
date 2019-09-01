@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material';
 import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import {MyserviceService} from './myservice.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ MyserviceService],
+  providers: [ MyserviceService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
